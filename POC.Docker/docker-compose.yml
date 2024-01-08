@@ -1,0 +1,13 @@
+﻿version: '3'
+services:
+  pocdock:  
+    build: .
+    ports:
+        - "28028:80"
+    environment:
+        - PRUEBA_VARIABLE=probando variable 123
+    volumes:
+    - "./bin/Debug/net7.0:/app"
+    - "./logs:/logs"
+#Setea la carpeta "Debug/net7.0" del host como la carpeta /app del cliente. Por eso al compilar en el host y reiniciar el container, 
+#se aplican los cambios sin necesidad de contruir otra imagen
