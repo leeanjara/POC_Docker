@@ -1,0 +1,12 @@
+﻿version: '3'
+services:
+  api:  
+    build: 
+      context: .
+      dockerfile: ./POC.Docker/Dockerfile
+    ports:
+        - "28028:80"
+    environment:
+        - PRUEBA_VARIABLE=probando variable 123
+    volumes:
+    - "./logs:/app/logs"
